@@ -2,18 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EquipmentApi.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace EquipmentApi.Controllers
 {
     [Route("api/[controller]")]
     public class EquipmentController : Controller
     {
-        // GET: api/values
         [HttpGet]
-        public IEnumerable<string> Get()
+        public String Get()
         {
-            return new string[] { "value1", "value2" };
+            EquipmentRoot equipmentRoot = EquipmentRoot.ReadFromJson("EquipmentData.json");
+            return JsonConvert.SerializeObject(equipmentRoot);
         }
 
         // GET api/values/5
