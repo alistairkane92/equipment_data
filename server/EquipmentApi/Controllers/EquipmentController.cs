@@ -15,7 +15,7 @@ namespace EquipmentApi.Controllers
         public String Get()
         {
             EquipmentRoot equipmentRoot = EquipmentRoot.ReadFromJson("EquipmentData.json");
-            return JsonConvert.SerializeObject(equipmentRoot);
+            return JsonConvert.SerializeObject(equipmentRoot.SerialisedEquipment);
         }
 
         // GET api/values/5
