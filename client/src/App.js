@@ -15,10 +15,10 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.data);
+    console.log('app', this.state.equipment);
     return (
       <div id="App">
-        <EquipmentList props={this.state.equipment}/>
+        <EquipmentList equipment={this.state.equipment}/>
       </div>
     );
   }
