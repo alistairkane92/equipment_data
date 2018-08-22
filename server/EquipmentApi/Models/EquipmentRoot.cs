@@ -15,6 +15,10 @@ namespace EquipmentApi.Models
         public List<EquipmentType> EquipmentType { get => _equipmentType; set => _equipmentType = value; }
         public List<Equipment> EquipmentList { get => _equipment; set => _equipment = value; }
 
+        public EquipmentRoot(string path){
+            ReadFromJson(path);
+        }
+
         public void ReadFromJson(string path)
         {
             using (StreamReader reader = new StreamReader(path))
@@ -36,9 +40,9 @@ namespace EquipmentApi.Models
             }
         }
 
-        public SerialisedEquipment FindByUnitNumber(string id)
+        public Equipment FindByUnitNumber(string id)
         {
-            foreach (SerialisedEquipment equipment in SerialisedEquipment)
+            foreach (Equipment equipment in EquipmentList)
             {
 
                 if (equipment.Id == id)
@@ -49,9 +53,9 @@ namespace EquipmentApi.Models
             return null;
         }
 
-        public SerialisedEquipment FindByEquipmentTypeId(string id)
+        public Equipment FindByEquipmentTypeId(string id)
         {
-            foreach (SerialisedEquipment equipment in SerialisedEquipment)
+            foreach (Equipment equipment in EquipmentList)
             {
 
                 if (equipment.EquipmentTypeId == id)
