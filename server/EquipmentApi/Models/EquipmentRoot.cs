@@ -24,16 +24,28 @@ namespace EquipmentApi.Models
 
         public SerialisedEquipment FindByUnitNumber(string id)
         {
-            SerialisedEquipment foundEquipment = new SerialisedEquipment();
-            foreach(SerialisedEquipment equipment in SerialisedEquipment)
+            foreach (SerialisedEquipment equipment in SerialisedEquipment)
             {
+
                 if (equipment.Id == id)
                 {
                     return equipment;
                 }
             }
-            return foundEquipment;
+            return null;
         }
 
+        public SerialisedEquipment FindByItemNumber(string id)
+        {
+            foreach (SerialisedEquipment equipment in SerialisedEquipment)
+            {
+
+                if (equipment.EquipmentTypeId == id)
+                {
+                    return equipment;
+                }
+            }
+            return null;
+        }
     }
-}
+ }

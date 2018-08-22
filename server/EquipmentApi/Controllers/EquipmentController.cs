@@ -22,7 +22,7 @@ namespace EquipmentApi.Controllers
         public String Get(string id)
         {
             EquipmentRoot equipmentRoot = EquipmentRoot.ReadFromJson("EquipmentData.json");
-            return JsonConvert.SerializeObject(equipmentRoot.FindByUnitNumber(id));
+            return JsonConvert.SerializeObject(equipmentRoot.FindBy("UnitNo", id));
         }
     }
 }
