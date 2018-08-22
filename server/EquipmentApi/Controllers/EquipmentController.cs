@@ -14,29 +14,29 @@ namespace EquipmentApi.Controllers
         [HttpGet]
         public String Get()
         {
-            EquipmentRoot equipmentRoot = EquipmentRoot.ReadFromJson("EquipmentData.json");
-            return JsonConvert.SerializeObject(equipmentRoot.SerialisedEquipment);
+            EquipmentRoot equipmentRoot = new EquipmentRoot("EquipmentData.json");
+            return JsonConvert.SerializeObject(equipmentRoot.EquipmentList);
         }
 
         [HttpGet("{id}")]
         public String Get(string id)
         {
-            EquipmentRoot equipmentRoot = EquipmentRoot.ReadFromJson("EquipmentData.json");
+            EquipmentRoot equipmentRoot = new EquipmentRoot("EquipmentData.json");
             return JsonConvert.SerializeObject(equipmentRoot.FindByUnitNumber(id));
         }
 
         [HttpGet("unit/{id}")]
         public String GetByUnitNumber(string id)
         {
-            EquipmentRoot equipmentRoot = EquipmentRoot.ReadFromJson("EquipmentData.json");
+            EquipmentRoot equipmentRoot = new EquipmentRoot("EquipmentData.json");
             return JsonConvert.SerializeObject(equipmentRoot.FindByUnitNumber(id));
         }
 
-        [HttpGet("item/{id}")]
-        public String GetByItemNumber(string id)
+        [HttpGet("type/{id}")]
+        public String GetByTypeId(string id)
         {
-            EquipmentRoot equipmentRoot = EquipmentRoot.ReadFromJson("EquipmentData.json");
-            return JsonConvert.SerializeObject(equipmentRoot.FindByItemNumber(id));
+            EquipmentRoot equipmentRoot = new EquipmentRoot("EquipmentData.json");
+            return JsonConvert.SerializeObject(equipmentRoot.FindByEquipmentTypeId(id));
         }
     }
 }

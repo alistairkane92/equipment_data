@@ -22,13 +22,13 @@
 
         public Equipment(string id, string externalId, string equipmentTypeId, int meterReading, string typeId, string typeExternalId, string typeDescription)
         {
-            this.Id = id;
-            this.ExternalId = externalId;
-            this.EquipmentTypeId = equipmentTypeId;
-            this.MeterReading = meterReading;
-            this.TypeId = typeId;
-            this.TypeExternalId = typeExternalId;
-            this.TypeDescription = typeDescription;
+            Id = id;
+            ExternalId = externalId;
+            EquipmentTypeId = equipmentTypeId;
+            MeterReading = meterReading;
+            TypeId = typeId;
+            TypeExternalId = typeExternalId;
+            TypeDescription = typeDescription;
         }
 
     }
