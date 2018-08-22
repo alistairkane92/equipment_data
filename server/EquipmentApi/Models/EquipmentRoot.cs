@@ -21,5 +21,19 @@ namespace EquipmentApi.Models
                 return JsonConvert.DeserializeObject<EquipmentRoot>(json);
             }
         }
+
+        public SerialisedEquipment FindByUnitNumber(string id)
+        {
+            SerialisedEquipment foundEquipment = new SerialisedEquipment();
+            foreach(SerialisedEquipment equipment in SerialisedEquipment)
+            {
+                if (equipment.Id == id)
+                {
+                    return equipment;
+                }
+            }
+            return foundEquipment;
+        }
+
     }
 }
