@@ -18,11 +18,18 @@ namespace EquipmentApi.Controllers
             return JsonConvert.SerializeObject(equipmentRoot.SerialisedEquipment);
         }
 
-        [HttpGet("{id}")]
-        public String Get(string id)
+        [HttpGet("/unit/{id}")]
+        public String GetByUnitNumber(string id)
         {
             EquipmentRoot equipmentRoot = EquipmentRoot.ReadFromJson("EquipmentData.json");
-            return JsonConvert.SerializeObject(equipmentRoot.FindBy("UnitNo", id));
+            return JsonConvert.SerializeObject(equipmentRoot.FindByUnitNumber(id));
+        }
+
+        [HttpGet("/item/{id}")]
+        public String GetByItemNumber(string id)
+        {
+            EquipmentRoot equipmentRoot = EquipmentRoot.ReadFromJson("EquipmentData.json");
+            return JsonConvert.SerializeObject(equipmentRoot.FindByItemNumber(id));
         }
     }
 }
