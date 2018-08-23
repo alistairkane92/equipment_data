@@ -53,7 +53,7 @@ namespace EquipmentApi.Models
             foreach (Equipment equipment in EquipmentList)
             {
 
-                if (equipment.Id == id)
+                if (equipment.ExternalId == id)
                 {
                     return equipment;
                 }
@@ -66,7 +66,7 @@ namespace EquipmentApi.Models
             foreach (Equipment equipment in EquipmentList)
             {
 
-                if (equipment.EquipmentTypeId == id)
+                if (equipment.TypeExternalId == id)
                 {
                     return equipment;
                 }
