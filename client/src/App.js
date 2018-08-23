@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import EquipmentList from './components/EquipmentList';
-import SearchBar from './components/SearchBar';
 import './App.css';
 
 class App extends Component {

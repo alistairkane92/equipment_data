@@ -48,17 +48,18 @@ namespace EquipmentApi.Models
 
         }
 
-        public Equipment FindByUnitNumber(string id)
+        public List<Equipment> FindByUnitNumber(string id)
         {
+            List<Equipment> result = new List<Equipment>();
             foreach (Equipment equipment in EquipmentList)
             {
 
                 if (equipment.ExternalId == id)
                 {
-                    return equipment;
+                    result.Add(equipment);
                 }
             }
-            return null;
+            return result;
         }
 
         public Equipment FindByEquipmentTypeId(string id)
