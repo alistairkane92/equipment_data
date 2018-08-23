@@ -1,5 +1,6 @@
 #app{
   background-color: #DCDCDC;
+  height: 100vw;
 }
 
 #equipment-id{
@@ -13,8 +14,9 @@
   padding: 0.01vw;
   margin-left: 25vw;
   overflow-y: scroll;
-  height: 60vw;
   border-style: solid;
+  border-width: thin;
+  height: 90vw;
 }
 
 #search-bar{
@@ -27,7 +29,7 @@
   font-size: 0.8vw;
   color: white;
   background-color: #708090;
-  height: 3vw;
+  height: 3.5vw;
   padding: 1vw;
   border-style:solid;
   border-width:thin;
@@ -45,6 +47,10 @@
   }
 
   #equipment-list{
-    height: 110vw;
+    height: 80vw;
+  }
+
+  #app{
+    height: 100vw;
   }
 }
