@@ -2,17 +2,16 @@ import EquipmentItem from './EquipmentItem';
 import React from 'react';
 
 const EquipmentList = ({equipment}) => {
-  console.log("equipmentList", equipment);
   if (!equipment) return null;
 
   const equipmentItems = equipment.map(equip => {
-    return <EquipmentItem equip={equip}/>
+    return <EquipmentItem equip={equip} key={equip.ExternalId}/>
   })
 
-  console.log('equipmentItems', equipmentItems);
-
   return(
-    <div>{equipmentItems}</div>
+    <ul id="equipment-list">
+      {equipmentItems}
+    </ul>
   )
 };
 

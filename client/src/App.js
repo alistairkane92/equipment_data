@@ -15,9 +15,8 @@ class App extends Component {
   }
 
   render() {
-    console.log('app', this.state.equipment);
     return (
-      <div id="App">
+      <div id="app">
         <EquipmentList equipment={this.state.equipment}/>
       </div>
     );
