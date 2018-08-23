@@ -1,5 +1,5 @@
-# equipment_data
-A back-end web server in C# combined with a React front-end to render equipment data.
+# Equipment Data
+An MVC web server in C# with a React front-end to render equipment data.
 
 Load up server in visual studio and run.
 `cd client`
