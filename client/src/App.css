@@ -10,37 +10,41 @@
 #equipment-list{
   list-style: none;
   width: 50vw;
-  padding: 10px;
+  padding: 0.01vw;
   margin-left: 25vw;
   overflow-y: scroll;
-  height: 50vw;
+  height: 60vw;
+  border-style: solid;
 }
 
 #search-bar{
   padding: 0.5vw;
-  margin: 1vw 0vw 0 40vw;
+  margin: 1.5vw 0vw 0 40vw;
   width: 20vw;
 }
 
 .equipment-entry{
+  font-size: 0.8vw;
   color: white;
   background-color: #708090;
-  margin: 0px 1vw 0.1vw 1vw;
-  height: 10vw;
+  height: 3vw;
   padding: 1vw;
   border-style:solid;
   border-width:thin;
+  font-size: 1vw;
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (max-width: 650px) {
   .equipment-entry {
-    font-size: 0.8vw;
-    height: 3vw;
+    height: 6vw;
+    font-size: 1.2vw;
   }
-}
 
-@media screen and (max-width: 600px) {
-  .equipment-entry {
-    font-size: 1.8vw;
+  #equipment-id{
+    font-size: 1.6vw;
+  }
+
+  #equipment-list{
+    height: 110vw;
   }
 }
