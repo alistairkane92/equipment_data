@@ -15,29 +15,37 @@ namespace EquipmentApi.Models
         public List<EquipmentType> EquipmentType { get => _equipmentType; set => _equipmentType = value; }
         public List<Equipment> EquipmentList { get => _equipment; set => _equipment = value; }
 
-        public EquipmentRoot(string path){
-            ReadFromJson(path);
+        public EquipmentRoot(){
         }
 
-        public void ReadFromJson(string path)
-        {
+        public EquipmentRoot(string path){
+            _equipment = new List<Equipment>();
+            ReadTheJson(path);
+        }
+
+        public void ReadTheJson(string path){
             using (StreamReader reader = new StreamReader(path))
             {
                 String json = reader.ReadToEnd();
-                EquipmentRoot equipmentRoot = JsonConvert.DeserializeObject<EquipmentRoot>(json);
+                EquipmentRoot equipmentRoot = new EquipmentRoot();
+                equipmentRoot = JsonConvert.DeserializeObject<EquipmentRoot>(json);
                 SerialisedEquipment = equipmentRoot.SerialisedEquipment;
                 EquipmentType = equipmentRoot.EquipmentType;
             }
 
-            foreach(SerialisedEquipment equip in SerialisedEquipment){
-                foreach(EquipmentType type in EquipmentType){
-                    if (equip.EquipmentTypeId == type.Id){
-                        EquipmentList.Add(
-                            new Equipment(equip.Id, equip.ExternalId, equip.EquipmentTypeId, equip.MeterReading, 
-                                          type.Id, type.ExternalId, type.Description));
+            foreach (SerialisedEquipment equip in SerialisedEquipment)
+            {
+                foreach (EquipmentType type in EquipmentType)
+                {
+                    if (equip.EquipmentTypeId == type.Id)
+                    {
+                        Equipment newEquip = new Equipment(equip.Id, equip.ExternalId, equip.EquipmentTypeId, equip.MeterReading,
+                                                           type.ExternalId, type.Description);
+                        EquipmentList.Add(newEquip);
                     }
                 }
             }
+
         }
 
         public Equipment FindByUnitNumber(string id)

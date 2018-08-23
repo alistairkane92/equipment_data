@@ -9,12 +9,13 @@ using Newtonsoft.Json;
 namespace EquipmentApi.Controllers
 {
     [Route("api/[controller]")]
-    public class EquipmentController : Controller
+    public class EquipmentController : ControllerBase
     {
         [HttpGet]
         public String Get()
         {
             EquipmentRoot equipmentRoot = new EquipmentRoot("EquipmentData.json");
+            List<Equipment> test = equipmentRoot.EquipmentList;
             return JsonConvert.SerializeObject(equipmentRoot.EquipmentList);
         }
 
