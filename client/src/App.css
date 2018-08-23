@@ -4,4 +4,20 @@
 
 .equipment-entry{
   padding: 1vw;
+  border-style:solid;
+  border-width:thin;
+}
+
+@media screen and (min-width: 601px) {
+  .equipment-entry {
+    font-size: 2vw;
+    height: 6vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .equipment-entry {
+    font-size: 2.5vw;
+    height: 8vw;
+  }
 }
